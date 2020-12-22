@@ -15,19 +15,14 @@ import javafx.scene.layout.TilePane;
 import javafx.stage.Stage;
 
 public class Main extends Application {
-    int i = 0;
-
-
     @Override
     public void start(Stage primaryStage) throws Exception {
         Parent root = FXMLLoader.load(getClass().getResource("sample.fxml"));
         primaryStage.setTitle("RiskManager");
-        primaryStage.setScene(new Scene(root, 420, 380));
+        primaryStage.setScene(new Scene(root, 1280, 720));
         primaryStage.show();
        primaryStage.setTitle("Riskman");
     }
-
-
 
         public static void main (String[]args){
             launch(args);

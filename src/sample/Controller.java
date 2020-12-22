@@ -1,24 +1,60 @@
 package sample;
 
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Node;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
-import javafx.scene.control.Button;
-import javafx.scene.control.Label;
+import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
-import javafx.scene.layout.AnchorPane;
-import javafx.scene.layout.GridPane;
-import javafx.scene.layout.VBox;
-import javafx.stage.Stage;
 
-import java.io.IOException;
-import java.util.ArrayList;
-import java.util.Random;
-
+import java.io.*;
+import java.util.Scanner;
 
 public class Controller {
 
-      }
+    @FXML
+    TextArea ingredians;
+    @FXML
+    TextField select;
+
+
+    @FXML
+    String FindFood() {
+        String foodname = select.getText();
+        switch (foodname) {
+            case "kaffe":
+                return "src\\\\sample\\\\kaffe.txt";
+            case "te":
+                return "src\\\\sample\\\\te.txt";
+            default:
+                return "no food selected";
+        }
+    }
+
+    @FXML
+    void loadfromfile() throws IOException {
+         String foodname = FindFood();
+        FileReader file = new FileReader(foodname);
+        BufferedReader input = new BufferedReader(file);
+
+          Scanner scanner = new Scanner(new File(foodname));
+          while (input.readLine() != null){
+              ingredians.appendText(scanner.nextLine() + "/n");
+
+          }
+
+
+
+
+    }
+
+
+}
+
+
+
+
+
+
+
+
+
+
 
