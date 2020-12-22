@@ -22,14 +22,24 @@ public class Controller {
     @FXML
     String FindFood(String foodname) {
         // Brug af Swich til at finde hvilken opskrift der skal vises
-        switch (foodname) {
+        String[] foodlocation = {"kaffe" , "te" , "foodnotfound.txt"};
+        String sammensatlocation ;
+       /* switch (foodname) {
             case "kaffe":
-                return "src\\\\sample\\\\kaffe.txt";
+                return "src\\sample\\opskifter\\kaffe.txt";
             case "te":
-                return "src\\\\sample\\\\te.txt";
+                return "src\\sample\\opskifter\\te.txt";
             default:
-                return "src\\\\sample\\\\foodnotfound.txt";
+                return "src\\sample\\opskifter\\" + "foodnotfound.txt";
+        }*/
+        //finder den rigtige opskrift gennem et forloop, sammen ting med en swich kan ses ovenover
+        for (int i = 0; i <foodlocation.length; i++) {
+            if (foodlocation[i].equals(foodname)){
+                sammensatlocation = "src\\sample\\opskifter\\" + foodlocation[i] + ".txt";
+                return sammensatlocation;
+            }
         }
+        return "src\\sample\\opskifter\\foodnotfound.txt";
     }
    ArrayList<Image> findimage(){
         //arrayliste for at finde det rigtige image
