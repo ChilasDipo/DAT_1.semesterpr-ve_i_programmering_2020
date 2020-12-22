@@ -18,10 +18,10 @@ public class Main extends Application {
     @Override
     public void start(Stage primaryStage) throws Exception {
         Parent root = FXMLLoader.load(getClass().getResource("sample.fxml"));
-        primaryStage.setTitle("RiskManager");
+        primaryStage.setTitle("Kogebog");
         primaryStage.setScene(new Scene(root, 1280, 720));
         primaryStage.show();
-       primaryStage.setTitle("Riskman");
+       primaryStage.setTitle("Kogebog");
     }
 
         public static void main (String[]args){
